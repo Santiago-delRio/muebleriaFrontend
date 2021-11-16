@@ -20,7 +20,7 @@ const Orden = ({ orden, clientes, muebles, ordenMuebles }) => {
 
     const borrarOrden = () =>{
 
-        axios.delete('http://localhost:1337/ordenes', {
+        axios.delete('http://159.223.185.153:1337/ordenes', {
             data: {
                 numero: orden.numero
             }

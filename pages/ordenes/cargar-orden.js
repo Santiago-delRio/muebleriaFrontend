@@ -96,7 +96,7 @@ const CargarOrden = ({ muebles, clientes }) => {
         
         }
 
-        axios.post('http://localhost:1337/ordenes', datosOrden, {
+        axios.post('http://159.223.185.153:1337/ordenes', datosOrden, {
             headers: {
                 'Content-Type': 'application/json',
             }

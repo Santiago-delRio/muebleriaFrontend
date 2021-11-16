@@ -55,7 +55,7 @@ const Clientes = ({ clientes }) => {
                 telefono: inputTelefono.current.value
             }
 
-            axios.post('http://localhost:1337/clientes', datosCliente, {
+            axios.post('http://159.223.185.153:1337/clientes', datosCliente, {
                 headers: {
                     'Content-Type': 'application/json',
                 }
@@ -75,7 +75,7 @@ const Clientes = ({ clientes }) => {
                 id: editarClienteId
             }
 
-            axios.put('http://localhost:1337/clientes', datosCliente, {
+            axios.put('http://159.223.185.153:1337/clientes', datosCliente, {
                 headers: {
                     'Content-Type': 'application/json',
                 }
@@ -90,7 +90,7 @@ const Clientes = ({ clientes }) => {
     }
     
     const borrarCliente = () =>{
-        axios.delete('http://localhost:1337/clientes', {
+        axios.delete('http://159.223.185.153:1337/clientes', {
             data: {
                 id: editarClienteId
             }

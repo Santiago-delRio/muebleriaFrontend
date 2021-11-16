@@ -93,7 +93,7 @@ const Mueble = ({ mueble, maderas, muebles }) => {
             id_mueble: mueble.id_mueble
         }
         
-        axios.put('http://localhost:1337/muebles', datosMueble, {
+        axios.put('http://159.223.185.153:1337/muebles', datosMueble, {
             headers: {
                 'Content-Type': 'application/json',
             }
@@ -106,7 +106,7 @@ const Mueble = ({ mueble, maderas, muebles }) => {
 
     const borrarMueble = () =>{
 
-        axios.delete('http://localhost:1337/muebles', {
+        axios.delete('http://159.223.185.153:1337/muebles', {
             data: {
                 id_mueble: mueble.id_mueble
             }

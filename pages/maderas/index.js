@@ -55,7 +55,7 @@ const Maderas = ({ maderas, empresas }) => {
                 empresa: inputEmpresa.current.value
             }
 
-            axios.post('http://localhost:1337/maderas', datosMadera, {
+            axios.post('http://159.223.185.153:1337/maderas', datosMadera, {
                 headers: {
                     'Content-Type': 'application/json',
                 }
@@ -76,7 +76,7 @@ const Maderas = ({ maderas, empresas }) => {
                 id: editandoMaderaId
             }
             
-            axios.put('http://localhost:1337/maderas', datosMadera, {
+            axios.put('http://159.223.185.153:1337/maderas', datosMadera, {
                 headers: {
                     'Content-Type': 'application/json',
                 }
@@ -90,7 +90,7 @@ const Maderas = ({ maderas, empresas }) => {
         }
     }
     const borrarMadera = () =>{
-        axios.delete('http://localhost:1337/maderas', {
+        axios.delete('http://159.223.185.153:1337/maderas', {
             data: {
                 id: editandoMaderaId
             }

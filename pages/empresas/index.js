@@ -53,7 +53,7 @@ const Empresas = ({ empresas }) => {
                 numero: inputTelefono.current.value
             }
 
-            axios.post('http://localhost:1337/empresas', datosEmpresa, {
+            axios.post('http://159.223.185.153:1337/empresas', datosEmpresa, {
                 headers: {
                     'Content-Type': 'application/json',
                 }
@@ -73,7 +73,7 @@ const Empresas = ({ empresas }) => {
                 id: editarEmpresaId
             }
             
-            axios.put('http://localhost:1337/empresas', datosEmpresa, {
+            axios.put('http://159.223.185.153:1337/empresas', datosEmpresa, {
                 headers: {
                     'Content-Type': 'application/json',
                 }
@@ -87,7 +87,7 @@ const Empresas = ({ empresas }) => {
         }
     }
     const borrarEmpresa = () =>{
-        axios.delete('http://localhost:1337/empresas', {
+        axios.delete('http://159.223.185.153:1337/empresas', {
             data: {
                 id: editarEmpresaId
             }
