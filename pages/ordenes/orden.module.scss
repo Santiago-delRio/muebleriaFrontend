@@ -1,0 +1,143 @@
+@use "../../styles/variables/colores" as *;
+
+.mostrarOrdenContainer{
+    & > :not(nav){
+        margin-left: 3rem;
+    }
+    //Navbar - flecha atras
+    nav{
+        background-color: white;
+        a{
+            display: block;
+            width: 4rem;
+            height: 4rem;
+        }
+        a svg{
+            width: 100%;
+            height: 100%;
+            border-right: solid 1px rgba(210, 211, 217, 0.602);
+        }
+    }
+    //Titulo pagina
+    .titulo{
+        font-family: $fuenteTitulos;
+        color: $clr_azul;
+        font-size: $tamañoTitulo;
+        margin-top: 3rem;
+    }
+    //Container info de la orden
+    .infoContainer{
+        display: flex;
+        flex-wrap: wrap;
+        //Todos los contenedores de info
+        & > div{
+            background-color: white;
+            width: fit-content;
+            margin: 20px 0;
+            margin-right: 30px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 18px rgba(140, 143, 163, 0.1);
+        }
+        //Entrega
+        .infoEntrega{
+            //Header
+            .header{
+                display: flex;
+                align-items: center;
+                margin-bottom: 20px;
+                .tituloHeader{
+                    font-size: calc(#{$tamañoTitulo} - .4rem);
+                    margin-left: 10px;
+                    color: $clr_azul;
+                }
+                svg{
+                    fill: $clr_azul;
+                }
+            }
+            //Info
+            p{
+                font-size: calc(#{$tamañoTitulo} - 1.1rem);
+                margin-bottom: 15px;
+            }
+            & > :last-child{
+                margin-bottom: 0;
+            }
+        }
+        //Muebles
+        .infoMuebles{
+            //Header
+            .header{
+                display: flex;
+                align-items: center;
+                margin-bottom: 20px;
+                .tituloHeader{
+                    font-size: calc(#{$tamañoTitulo} - .4rem);
+                    margin-left: 10px;
+                    color: $clr_azul;
+                }
+                svg{
+                    fill: $clr_azul;
+                }
+            }
+            //Info
+            .mueblesComprados{
+                p{
+                    font-size: calc(#{$tamañoTitulo} - 1.1rem);
+                    margin-bottom: 15px;
+                }
+            }
+            //Precio final
+            & > p{
+                font-size: calc(#{$tamañoTitulo} - 1.1rem);
+                border-top: solid 1px rgba(210, 211, 217);
+                padding-top: 15px;
+                span{
+                    color: $clr_azul;
+                    font-weight: 600;
+                }
+            }
+        }
+        //Cliente
+        .infoCliente{
+            //Header
+            .header{
+                display: flex;
+                align-items: center;
+                margin-bottom: 20px;
+                .tituloHeader{
+                    font-size: calc(#{$tamañoTitulo} - .4rem);
+                    margin-left: 10px;
+                    color: $clr_azul;
+                }
+                svg{
+                    fill: $clr_azul;
+                }
+            }
+            p{
+                font-size: calc(#{$tamañoTitulo} - 1.1rem);
+                margin-bottom: 15px;
+            }
+        }
+    }
+    .btnBorrarOrden{
+        font-family: $fuenteTitulos;
+        font-size: calc(#{$tamañoTitulo} - 1rem);
+        font-weight: bold;
+        color: white;
+        background-color: #E20F0F;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        padding: 7px;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+        svg{
+            fill: white;
+            margin-right: 5px;
+        }
+    }
+}

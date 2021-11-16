@@ -1,0 +1,204 @@
+@use "../../styles/variables/colores" as *;
+
+.maderasContainer{
+    margin: 3rem 3rem 0 3rem;
+    
+    //Titulo
+    .titulo{   
+        font-family: $fuenteTitulos;
+        color: $clr_azul;
+        font-size: $tamañoTitulo;
+    }
+    //Boton agregar madera
+    .btnAgregarMadera{
+        background-color: white;
+        margin: 15px 0;
+
+        border: 2px solid $clr_azulOscuro;
+        border-radius: 10px;
+        padding: 5px 7px;
+
+        font-family: $fuenteTitulos;
+        font-size: calc(#{$tamañoTitulo} - 1rem);
+        color: $clr_azulOscuro;
+        cursor: pointer;
+    }
+    //Container cargar nueva madera
+    .agregarMaderaContainer{
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 0 18px rgba(140, 143, 163, 0.1);
+        padding: 20px;
+        width: 100%;
+        margin-bottom: 45px;
+
+        //Header
+        .header{
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            .tituloHeader{
+                font-size: calc(#{$tamañoTitulo} - .4rem);
+                margin-left: 10px;
+                color: $clr_azul;
+            }
+            svg{
+                fill: $clr_azul;
+            }
+        }
+        
+        // Carga info cliente
+        .cargarInfo{
+            display: flex;
+            flex-direction: column;
+            h2{
+                color: $clr_azul;
+                font-size: calc(#{$tamañoTitulo} - 1rem);
+                margin-bottom: 5px;
+            }
+            //Todos los input y select
+            input, select{
+                background-color: #F5F5F5;
+                border: 1px solid $clr_azulClaro;
+                border-radius: 5px;
+                padding: 5px;
+                color: $clr_azulClaro;
+                &:focus{
+                    outline: $clr_azul solid 1px;
+                }
+            }
+            .inputInfo{
+                display: flex;
+                margin-bottom: 30px;
+                //Nombre
+                .nombre, .dureza{
+                    margin-right: 20px;
+                }
+                .empresa{
+                    align-self: flex-end;
+                    select{
+                        padding: 4px;
+                    }
+                }
+            }
+            
+            //Botones
+            .botones{
+                display: flex;
+                align-items: flex-end;
+
+                button{
+                    font-family: $fuenteTitulos;
+                    font-size: calc(#{$tamañoTitulo} - 1.1rem);
+                    font-weight: bold;
+                    color: white;
+                    background-color: #68B319;
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    padding: 5px 13px;
+                    border-radius: 10px;
+                    border: none;
+                    cursor: pointer;
+                    svg{
+                        fill: white;
+                        margin-right: 5px;
+                    }
+                }
+                .btnBorrarMadera{
+                    background-color: #E20F0F;
+                    margin-left: 20px;
+                }
+                .btnCancelar{
+                    background-color: transparent;
+                    color: $clr_azul;
+                    border: 3px solid $clr_azul;
+                    margin-left: 20px;
+                    padding: 2px 13px;
+                }
+            }
+            //Si quedo un input vacio
+            .inputVacio input{
+                outline: #E20F0F solid 1px;
+                border: 1px solid #E20F0F;
+            }
+        }
+    }
+    //Tabla de maderas
+    .tablaMaderas{
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 0 18px rgba(140, 143, 163, 0.1);
+        padding: 10px 20px;
+        width: 100%;
+
+        //Head tabla
+        .headTablaMaderas{
+            color: $clr_azulOscuro;
+            position: relative;
+            //Texto head
+            tr th{
+                position: relative;
+                text-align: left;
+                padding-bottom: 10px;
+            }
+            //Fondo head gris
+            &::before{
+                content: "";
+                display: block;
+                position: absolute;
+                top: -12px;
+                left: -22px;
+
+                width: 100%;
+                padding: 10px 22px;
+                height: 26px;
+
+                background-color: #f8f8f8;
+                border-radius: 10px 10px 0 0;
+            }
+        }
+
+        //Body tabla
+        tbody{
+            tr td{
+                padding: 15px 0;
+                padding-right: 20px;
+            }
+            //Bordes de las celdas
+            tr:not(tr:first-child){
+                position: relative;
+                &::after{
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    left: -22px;
+                    width: 100%;
+                    padding: 0 22px;
+                    height: 1px;
+                    background-color: rgba(210, 211, 217, 0.6);
+                }
+            }
+            //Boton editar muebles
+            .btnEditarMadera button{
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                color: $clr_azul;
+                font-weight: bold;
+                font-size: 1rem;
+
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+                svg{
+                    margin-right: 5px;
+                    fill: $clr_azul;
+                    pointer-events: none
+                }
+            }
+        }
+    }
+}

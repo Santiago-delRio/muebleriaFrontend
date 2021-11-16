@@ -1,0 +1,205 @@
+@use "../styles/variables/colores" as *;
+
+.editarMuebleContainer{
+    & > :not(nav){
+        margin-left: 3rem;
+    }
+    h2{
+        color: $clr_azul;
+        font-size: calc(#{$tamañoTitulo} - 1rem);
+        margin-bottom: 5px;
+    }
+    //Navbar - flecha atras
+    nav{
+        background-color: white;
+        a{
+            display: block;
+            width: 4rem;
+            height: 4rem;
+        }
+        a svg{
+            width: 100%;
+            height: 100%;
+            border-right: solid 1px rgba(210, 211, 217, 0.602);
+        }
+    }
+    //Titulo pagina
+    .titulo{
+        font-family: $fuenteTitulos;
+        color: $clr_azul;
+        font-size: $tamañoTitulo;
+        margin-top: 3rem;
+    }
+    .cargarInfoContainer{
+        display: flex;
+        flex-wrap: wrap;
+        //Input esta vacio
+        .inputVacio input{
+            outline: #E20F0F solid 1px;
+            border: 1px solid #E20F0F;
+        }
+        //Todos los contenedores para cargar info
+        & > div{
+            background-color: white;
+            width: fit-content;
+            margin: 20px 0;
+            margin-right: 30px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 18px rgba(140, 143, 163, 0.1);
+        }
+        input, select{
+            width: 50ch;
+            background-color: #F5F5F5;
+            border: 1px solid $clr_azulClaro;
+            border-radius: 5px;
+            padding: 5px;
+            color: $clr_azulClaro;
+            &:focus{
+                outline: $clr_azul solid 1px;
+            }
+        }
+        //Precio y descuento
+        .cargarPrecio{
+            display: flex;
+            .precio input{
+                width: 10ch;
+                margin-right: 20px;
+            }
+            .descuento input{
+                width: 22ch;
+            }
+        }
+        //Cargar mueble de sugerencia
+        .cargarCombo{
+            h3{
+                color: $clr_azul;
+                font-size: calc(#{$tamañoTitulo} - 1.2rem);
+                margin-bottom: 5px;
+            }
+            //Separar inputs que se van agregando
+            & > div{
+                margin-bottom: 20px;
+                display: flex;
+            }
+            & > :last-child{
+                margin-bottom: 0;
+            }
+            select{
+                width: 23ch;
+                margin-right: 20px;
+                cursor: pointer;
+            }
+            input{
+                width: 10ch;
+                margin-right: 20px;
+            }
+            .btnAgregarCombo{
+                display: flex;
+                align-self: flex-end;
+                justify-content: center;
+                align-items: center;
+
+                width: 1.9rem;
+                height: 1.9rem;
+
+                background-color: #F5F5F5;
+                border: 1px solid $clr_azulClaro;
+                border-radius: 5px;
+                color: $clr_azulClaro;
+                cursor: pointer;
+                &:focus{
+                    outline: $clr_azul solid 1px;
+                }
+            }
+        }
+        //Cargar medidas
+        .cargarMedidas{
+            .medidasInputs{
+                display: flex;
+                & > div{
+                    margin-right: 20px;
+                }
+                h3{
+                    color: $clr_azul;
+                    font-size: calc(#{$tamañoTitulo} - 1.2rem);
+                    margin-bottom: 5px;
+                }
+                input{
+                    width: 7ch;
+                }
+                .profundidad input{
+                    width: 13ch;
+                }
+            }
+        }
+        //Cargar medidas
+        .cargarMaderas{
+            //Container primer select
+            .selectMaderas{
+                display: flex;
+                select{
+                    margin-top: 0;
+                }
+            }
+            //Selects que se van agregando
+            select{
+                width: 20ch;
+                margin-right: 20px;
+                margin-top: 15px;
+                cursor: pointer;
+            }
+
+            .btnAgregarMadera{
+                display: flex;
+                align-self: flex-start;
+                justify-content: center;
+                align-items: center;
+
+                width: 1.9rem;
+                height: 1.9rem;
+
+                background-color: #F5F5F5;
+                border: 1px solid $clr_azulClaro;
+                border-radius: 5px;
+                color: $clr_azulClaro;
+                cursor: pointer;
+                &:focus{
+                    outline: $clr_azul solid 1px;
+                }
+            }
+        }
+    }
+    //Botones guardar y borrar cambios
+    .botonesGuardarCambiar{
+        display: flex;
+        padding-bottom: 2rem;
+        margin-top: 10px;
+        button{
+            font-family: $fuenteTitulos;
+            font-size: calc(#{$tamañoTitulo} - 1rem);
+            font-weight: bold;
+            color: white;
+    
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    
+            padding: 7px;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            svg{
+                fill: white;
+                margin-right: 5px;
+            }
+        }
+        .btnGuardarCambios{
+            background-color: #68B319;
+            margin-right: 30px;
+        }
+        .btnBorrarMueble{
+            background-color: #E20F0F;
+        }
+    }
+}

@@ -1,0 +1,32 @@
+@use "../../styles/variables/colores" as *;
+
+.sidebarContainer{
+    background: rgb(17,23,53);
+    background: linear-gradient(145deg, rgba(17,23,53,1) 0%, rgba(27,34,73,1) 100%);
+    width: fit-content;
+    height: 100%;
+    padding: 3rem 3rem 0;
+
+    .logo{
+        font-family: $fuenteTitulos;
+        font-weight: 600;
+        font-size: 2rem;
+        width: fit-content;
+        color: $clr_dorado;
+        border: 2px solid $clr_dorado;
+        padding: .2rem 1rem;
+        margin-bottom: 3rem;
+    }
+    .listaLinks{
+        list-style-type: none;
+        li{
+            margin-bottom: 1.6rem;
+            max-width: 17ch;
+            a{
+                text-decoration: none;
+                color: $clr_textoSidebar;
+                font-size: 1rem;
+            }
+        }
+    }
+}
