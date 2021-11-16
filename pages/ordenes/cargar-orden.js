@@ -3,6 +3,7 @@ import Link from "next/link"
 import { useRouter } from 'next/router'
 import { useRef, useState } from 'react';
 import cargarOrdenStyles from "./cargarOrden.module.scss"
+import Head from 'next/head'
 
 const CargarOrden = ({ muebles, clientes }) => {
 
@@ -111,6 +112,9 @@ const CargarOrden = ({ muebles, clientes }) => {
 
     return (
         <div className={cargarOrdenStyles.cargarOrdenContainer}>
+            <Head>
+                <title>Mueblería - Cargar orden</title>
+            </Head>
             <nav>
                 <Link href="/ordenes">
                     <a>

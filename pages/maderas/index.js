@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useRef, useState } from 'react';
 import { useRouter } from 'next/router'
 import maderasStyles from "./maderas.module.scss"
+import Head from 'next/head'
 
 const Maderas = ({ maderas, empresas }) => {
 
@@ -104,6 +105,9 @@ const Maderas = ({ maderas, empresas }) => {
 
     return (
         <div className={maderasStyles.maderasContainer}>
+            <Head>
+                <title>Mueblería - Maderas</title>
+            </Head>
             {/* Titulo pagina */}
             <h1 className={maderasStyles.titulo}>Maderas</h1>
             {/* Boton para agregar maderas */}

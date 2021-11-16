@@ -3,6 +3,7 @@ import Link from "next/link"
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react';
 import ordenStyles from "./orden.module.scss"
+import Head from 'next/head'
 
 const Orden = ({ orden, clientes, muebles, ordenMuebles }) => {
 
@@ -34,6 +35,9 @@ const Orden = ({ orden, clientes, muebles, ordenMuebles }) => {
 
     return (
         <div className={ordenStyles.mostrarOrdenContainer}>
+            <Head>
+                <title>Mueblería - Orden {orden.numero}</title>
+            </Head>
             <nav>
                 <Link href="/ordenes">
                     <a>

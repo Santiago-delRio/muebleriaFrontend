@@ -3,6 +3,7 @@ import Link from "next/link"
 import { useRouter } from 'next/router'
 import { useRef, useState } from "react";
 import editarMuebleStyles from "./mueble.module.scss"
+import Head from 'next/head'
 
 const Mueble = ({ mueble, maderas, muebles }) => {
 
@@ -120,6 +121,9 @@ const Mueble = ({ mueble, maderas, muebles }) => {
 
     return (
         <div className={editarMuebleStyles.editarMuebleContainer}>
+            <Head>
+                <title>Mueblería - {mueble.nombre}</title>
+            </Head>
             <nav>
                 <Link href="/">
                     <a>

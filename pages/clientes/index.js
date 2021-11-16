@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useRef, useState } from 'react';
 import { useRouter } from 'next/router'
 import clientesStyles from "./clientes.module.scss"
+import Head from 'next/head'
 
 const Clientes = ({ clientes }) => {
 
@@ -104,6 +105,9 @@ const Clientes = ({ clientes }) => {
 
     return (
         <div className={clientesStyles.clientesContainer}>
+            <Head>
+                <title>Mueblería - Clientes</title>
+            </Head>
             {/* Titulo pagina */}
             <h1 className={clientesStyles.titulo}>Clientes</h1>
             {/* Boton para agregar clientes */}

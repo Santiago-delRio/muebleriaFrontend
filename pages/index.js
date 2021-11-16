@@ -1,11 +1,15 @@
 import Link from "next/link"
 import mueblesStyles from "./muebles.module.scss"
 import axios from 'axios';
+import Head from 'next/head'
 
 const Muebles = ({muebles}) => {
   
   return (
     <div className={mueblesStyles.mueblesContainer}>
+      <Head>
+          <title>Mueblería - Muebles</title>
+      </Head>
       {/* Titulo pagina */}
       <h1 className={mueblesStyles.titulo}>Muebles</h1>
       <Link href="/cargar-mueble">

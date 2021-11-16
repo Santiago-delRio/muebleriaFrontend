@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 import { useRef, useState } from "react";
 import axios from 'axios';
 import cargarMuebleStyles from "./cargar-mueble.module.scss"
+import Head from 'next/head'
 
 const CargarMueble = ({ maderas, muebles }) => {
 
@@ -117,6 +118,9 @@ const CargarMueble = ({ maderas, muebles }) => {
 
     return (
         <div className={cargarMuebleStyles.cargarMuebleContainer}>
+            <Head>
+                <title>Mueblería - Cargar mueble</title>
+            </Head>
             <nav>
                 <Link href="/">
                     <a>

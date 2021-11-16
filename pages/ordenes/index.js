@@ -1,11 +1,15 @@
 import axios from 'axios';
 import Link from "next/link"
 import ordenesStyles from "./ordenes.module.scss"
+import Head from 'next/head'
 
 const Ordenes = ({ ordenes }) => {
 
     return (
         <div className={ordenesStyles.ordenesContainer}>
+            <Head>
+                <title>Mueblería - Ordenes</title>
+            </Head>
             <h1 className={ordenesStyles.titulo}>Órdenes de compra</h1>
             {/* Boton para ir a la pagina de carga de ordenes */}
             <Link href="/ordenes/cargar-orden">

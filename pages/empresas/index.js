@@ -1,7 +1,8 @@
 import axios from 'axios';
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { useRouter } from 'next/router'
 import empresasStyles from "./empresas.module.scss"
+import Head from 'next/head'
 
 const Empresas = ({ empresas }) => {
 
@@ -100,6 +101,9 @@ const Empresas = ({ empresas }) => {
     }
     return (
         <div className={empresasStyles.empresasContainer}>
+            <Head>
+                <title>Mueblería - Empresas</title>
+            </Head>
             {/* Titulo pagina */}
             <h1 className={empresasStyles.titulo}>Empresas</h1>
             {/* Boton para agregar empresas */}
