@@ -1,17 +1,7 @@
 import sidebarStyles from "./sidebar.module.scss"
 import Link from "next/link"
-import { useEffect } from "react";
 
 const Sidebar = () => {
-
-    //Mantener el server de heroku prendido
-    useEffect(()=>{
-        setInterval(()=>{
-            fetch('https://muebleria-api.herokuapp.com/clientes')
-            .then(response => response.json())
-        },1500000) 
-
-    })
     return (
         <div className={sidebarStyles.sidebarContainer}>
             <h1 className={sidebarStyles.logo}>MUEBLES</h1>
