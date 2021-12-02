@@ -103,7 +103,7 @@ const CargarMueble = ({ maderas, muebles }) => {
             combos: combosMuebles
         }
         
-        axios.post('http://localhost:1337/muebles', datosMueble, {
+        axios.post('https://muebleria-api.herokuapp.com/muebles', datosMueble, {
             headers: {
                 'Content-Type': 'application/json',
             }
