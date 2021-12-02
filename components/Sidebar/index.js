@@ -8,6 +8,7 @@ const Sidebar = () => {
     useEffect(()=>{
         setInterval(()=>{
             fetch('https://muebleria-api.herokuapp.com/clientes')
+            .then(response => response.json())
         },1500000) 
 
     })
