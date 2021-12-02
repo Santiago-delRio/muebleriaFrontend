@@ -262,8 +262,8 @@ export default CargarMueble;
 // Fetch maderas
 export async function getStaticProps(){
 
-    const maderasResponse  = await axios.get(`http://${process.env.SERVER_IP}/maderas`);
-    const mueblesResponse  = await axios.get(`http://${process.env.SERVER_IP}/muebles`);
+    const maderasResponse  = await axios.get(`https://${process.env.SERVER_IP}/maderas`);
+    const mueblesResponse  = await axios.get(`https://${process.env.SERVER_IP}/muebles`);
    
     const maderas = maderasResponse.data
     const muebles = mueblesResponse.data

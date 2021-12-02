@@ -56,7 +56,7 @@ const Maderas = ({ maderas, empresas }) => {
                 empresa: inputEmpresa.current.value
             }
 
-            axios.post('http://159.223.185.153:1337/maderas', datosMadera, {
+            axios.post('https://muebleria-api.herokuapp.com/maderas', datosMadera, {
                 headers: {
                     'Content-Type': 'application/json',
                 }
@@ -77,7 +77,7 @@ const Maderas = ({ maderas, empresas }) => {
                 id: editandoMaderaId
             }
             
-            axios.put('http://159.223.185.153:1337/maderas', datosMadera, {
+            axios.put('https://muebleria-api.herokuapp.com/maderas', datosMadera, {
                 headers: {
                     'Content-Type': 'application/json',
                 }
@@ -91,7 +91,7 @@ const Maderas = ({ maderas, empresas }) => {
         }
     }
     const borrarMadera = () =>{
-        axios.delete('http://159.223.185.153:1337/maderas', {
+        axios.delete('https://muebleria-api.herokuapp.com/maderas', {
             data: {
                 id: editandoMaderaId
             }
@@ -225,8 +225,8 @@ export default Maderas;
 // Fetch maderas
 export async function getStaticProps(){
 
-    const maderasResponse  = await axios.get(`http://${process.env.SERVER_IP}/maderas`);
-    const empresasResponse  = await axios.get(`http://${process.env.SERVER_IP}/empresas`);
+    const maderasResponse  = await axios.get(`https://${process.env.SERVER_IP}/maderas`);
+    const empresasResponse  = await axios.get(`https://${process.env.SERVER_IP}/empresas`);
    
     const maderas = maderasResponse.data
     const empresas = empresasResponse.data

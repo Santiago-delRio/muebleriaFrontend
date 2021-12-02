@@ -94,7 +94,7 @@ const Mueble = ({ mueble, maderas, muebles }) => {
             id_mueble: mueble.id_mueble
         }
         
-        axios.put('http://159.223.185.153:1337/muebles', datosMueble, {
+        axios.put('https://muebleria-api.herokuapp.com/muebles', datosMueble, {
             headers: {
                 'Content-Type': 'application/json',
             }
@@ -107,7 +107,7 @@ const Mueble = ({ mueble, maderas, muebles }) => {
 
     const borrarMueble = () =>{
 
-        axios.delete('http://159.223.185.153:1337/muebles', {
+        axios.delete('https://muebleria-api.herokuapp.com/muebles', {
             data: {
                 id_mueble: mueble.id_mueble
             }
@@ -271,7 +271,7 @@ export default Mueble;
 
 export async function getStaticPaths(){
 
-    const mueblesResponse  = await axios.get(`http://${process.env.SERVER_IP}/muebles`);
+    const mueblesResponse  = await axios.get(`https://${process.env.SERVER_IP}/muebles`);
 
     const muebles = mueblesResponse.data
 
@@ -290,9 +290,9 @@ export async function getStaticProps({params}){
     const {slug} = params;
 
     try{
-        const muebleResponse  = await axios.get(`http://${process.env.SERVER_IP}/muebles/${slug}`);
-        const maderasResponse  = await axios.get(`http://${process.env.SERVER_IP}/maderas`);
-        const mueblesResponse  = await axios.get(`http://${process.env.SERVER_IP}/muebles`);
+        const muebleResponse  = await axios.get(`https://${process.env.SERVER_IP}/muebles/${slug}`);
+        const maderasResponse  = await axios.get(`https://${process.env.SERVER_IP}/maderas`);
+        const mueblesResponse  = await axios.get(`https://${process.env.SERVER_IP}/muebles`);
 
         const data = muebleResponse.data
         const mueble = data[0];

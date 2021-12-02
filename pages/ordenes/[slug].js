@@ -21,7 +21,7 @@ const Orden = ({ orden, clientes, muebles, ordenMuebles }) => {
 
     const borrarOrden = () =>{
 
-        axios.delete('http://159.223.185.153:1337/ordenes', {
+        axios.delete('https://muebleria-api.herokuapp.com/ordenes', {
             data: {
                 numero: orden.numero
             }
@@ -102,7 +102,7 @@ export default Orden;
 
 export async function getStaticPaths(){
 
-    const ordenesResponse  = await axios.get(`http://${process.env.SERVER_IP}/ordenes`);
+    const ordenesResponse  = await axios.get(`https://${process.env.SERVER_IP}/ordenes`);
 
     const ordenes = ordenesResponse.data
 
@@ -121,10 +121,10 @@ export async function getStaticProps({params}){
     const {slug} = params;
 
     try{
-        const ordenResponse  = await axios.get(`http://${process.env.SERVER_IP}/ordenes/${slug}`);
+        const ordenResponse  = await axios.get(`https://${process.env.SERVER_IP}/ordenes/${slug}`);
         
-        const mueblesResponse  = await axios.get(`http://${process.env.SERVER_IP}/muebles`);
-        const clientesResponse  = await axios.get(`http://${process.env.SERVER_IP}/clientes`);
+        const mueblesResponse  = await axios.get(`https://${process.env.SERVER_IP}/muebles`);
+        const clientesResponse  = await axios.get(`https://${process.env.SERVER_IP}/clientes`);
 
         const data = ordenResponse.data
         const orden = data[0][0];

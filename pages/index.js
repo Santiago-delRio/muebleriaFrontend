@@ -68,7 +68,7 @@ export default Muebles;
 // Fetch muebles
 export async function getStaticProps(){
 
-  const mueblesResponse  = await axios.get(`http://${process.env.SERVER_IP}/muebles`);
+  const mueblesResponse  = await axios.get(`https://${process.env.SERVER_IP}/muebles`);
  
   const muebles = mueblesResponse.data
   

@@ -56,7 +56,7 @@ const Clientes = ({ clientes }) => {
                 telefono: inputTelefono.current.value
             }
 
-            axios.post('http://159.223.185.153:1337/clientes', datosCliente, {
+            axios.post('https://muebleria-api.herokuapp.com/clientes', datosCliente, {
                 headers: {
                     'Content-Type': 'application/json',
                 }
@@ -64,6 +64,7 @@ const Clientes = ({ clientes }) => {
                 console.log(error);
             });
 
+            console.log(datosCliente)
             alert("Cliente guardado con éxito")
             //Refrescar la pagina
             router.reload(window.location.pathname)
@@ -76,7 +77,7 @@ const Clientes = ({ clientes }) => {
                 id: editarClienteId
             }
 
-            axios.put('http://159.223.185.153:1337/clientes', datosCliente, {
+            axios.put('https://muebleria-api.herokuapp.com/clientes', datosCliente, {
                 headers: {
                     'Content-Type': 'application/json',
                 }
@@ -91,7 +92,7 @@ const Clientes = ({ clientes }) => {
     }
     
     const borrarCliente = () =>{
-        axios.delete('http://159.223.185.153:1337/clientes', {
+        axios.delete('https://muebleria-api.herokuapp.com/clientes', {
             data: {
                 id: editarClienteId
             }
@@ -211,7 +212,7 @@ export default Clientes;
 // Fetch clientes
 export async function getStaticProps(){
 
-    const clientesResponse  = await axios.get(`http://${process.env.SERVER_IP}/clientes`);
+    const clientesResponse  = await axios.get(`https://${process.env.SERVER_IP}/clientes`);
    
     const clientes = clientesResponse.data
 
