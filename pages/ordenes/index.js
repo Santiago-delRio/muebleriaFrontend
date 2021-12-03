@@ -66,7 +66,7 @@ export default Ordenes;
 // Fetch ordenes
 export async function getStaticProps(){
 
-    const ordenesResponse  = await axios.get(`https://${process.env.SERVER_IP}/ordenes`);
+    const ordenesResponse  = await axios.get(`http://${process.env.SERVER_IP}/ordenes`);
    
     const ordenes = ordenesResponse.data
 

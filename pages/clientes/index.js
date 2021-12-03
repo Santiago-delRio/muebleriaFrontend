@@ -56,7 +56,7 @@ const Clientes = ({ clientes }) => {
                 telefono: inputTelefono.current.value
             }
 
-            axios.post('https://muebleria-api.herokuapp.com/clientes', datosCliente, {
+            axios.post('http://45.79.133.104:1337/clientes', datosCliente, {
                 headers: {
                     'Content-Type': 'application/json',
                 }
@@ -77,7 +77,7 @@ const Clientes = ({ clientes }) => {
                 id: editarClienteId
             }
 
-            axios.put('https://muebleria-api.herokuapp.com/clientes', datosCliente, {
+            axios.put('http://45.79.133.104:1337/clientes', datosCliente, {
                 headers: {
                     'Content-Type': 'application/json',
                 }
@@ -92,7 +92,7 @@ const Clientes = ({ clientes }) => {
     }
     
     const borrarCliente = () =>{
-        axios.delete('https://muebleria-api.herokuapp.com/clientes', {
+        axios.delete('http://45.79.133.104:1337/clientes', {
             data: {
                 id: editarClienteId
             }
@@ -212,7 +212,7 @@ export default Clientes;
 // Fetch clientes
 export async function getStaticProps(){
 
-    const clientesResponse  = await axios.get(`https://${process.env.SERVER_IP}/clientes`);
+    const clientesResponse  = await axios.get(`http://${process.env.SERVER_IP}/clientes`);
    
     const clientes = clientesResponse.data
 

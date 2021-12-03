@@ -97,7 +97,7 @@ const CargarOrden = ({ muebles, clientes }) => {
         
         }
 
-        axios.post('https://muebleria-api.herokuapp.com/ordenes', datosOrden, {
+        axios.post('http://45.79.133.104:1337/ordenes', datosOrden, {
             headers: {
                 'Content-Type': 'application/json',
             }
@@ -265,8 +265,8 @@ export default CargarOrden;
 // Fetch muebles
 export async function getStaticProps(){
 
-    const mueblesResponse  = await axios.get(`https://${process.env.SERVER_IP}/muebles`);
-    const clientesResponse  = await axios.get(`https://${process.env.SERVER_IP}/clientes`);
+    const mueblesResponse  = await axios.get(`http://${process.env.SERVER_IP}/muebles`);
+    const clientesResponse  = await axios.get(`http://${process.env.SERVER_IP}/clientes`);
 
     const muebles = mueblesResponse.data
     const clientes = clientesResponse.data
